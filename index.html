@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Różowa Strona z Serduszkami</title>
+    <style>
+        body {
+            background-color: #FFC0CB; /* Jasno różowy kolor tła */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .heart {
+            color: red; /* Czerwony kolor serduszek */
+            font-size: 2rem;
+        }
+        #kliknijMnie {
+            background-color: red; /* Czerwony kolor przycisku */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        #wyjdz {
+            background-color: transparent;
+            color: black; /* Czarny kolor napisu */
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="heart">❤️❤️❤️</div>
+    <button id="kliknijMnie" onclick="window.location.href='podstrona.html'">Kliknij mnie</button>
+    <button id="wyjdz" onmouseover="zmienPolozenie()">Wyjdź</button>
+
+    <script>
+        function zmienPolozenie() {
+            const wyjdzButton = document.getElementById('wyjdz');
+            const randomX = Math.floor(Math.random() * window.innerWidth);
+            const randomY = Math.floor(Math.random() * window.innerHeight);
+            wyjdzButton.style.position = 'absolute';
+            wyjdzButton.style.left = `${randomX}px`;
+            wyjdzButton.style.top = `${randomY}px`;
+        }
+    </script>
+</body>
+</html>
